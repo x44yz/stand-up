@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Stand Up Reminder</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="settings-page">
+    <main class="settings-panel">
+      <label class="prompt" for="notify-range">Notify me at:</label>
+
+      <section class="slider-block" aria-label="Reminder interval">
+        <div class="selected-time"><span id="selected-minutes">45</span> min</div>
+        <input id="notify-range" type="range" min="1" max="60" step="1" value="45" list="minute-marks" />
+        <datalist id="minute-marks">
+          <option value="1"></option>
+          <option value="5"></option>
+          <option value="10"></option>
+          <option value="15"></option>
+          <option value="20"></option>
+          <option value="25"></option>
+          <option value="30"></option>
+          <option value="35"></option>
+          <option value="40"></option>
+          <option value="45"></option>
+          <option value="50"></option>
+          <option value="55"></option>
+          <option value="60"></option>
+        </datalist>
+        <div class="tick-labels" aria-hidden="true">
+          <span>1</span>
+          <span>15</span>
+          <span>30</span>
+          <span>45</span>
+          <span>60</span>
+        </div>
+      </section>
+
+      <fieldset class="mode-group">
+        <label>
+          <input type="radio" name="mode" value="default" checked />
+          <span>Default mode</span>
+        </label>
+        <label>
+          <input type="radio" name="mode" value="forced" />
+          <span>Forced mode</span>
+        </label>
+      </fieldset>
+
+      <button id="start-button" type="button">Start countdown</button>
+    </main>
+
+    <script src="renderer.js"></script>
+  </body>
+</html>
